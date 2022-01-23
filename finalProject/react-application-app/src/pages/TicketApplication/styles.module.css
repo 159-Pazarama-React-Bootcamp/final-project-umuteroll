@@ -1,5 +1,3 @@
-.floatContainer {
-}
 .floatChildLeft {
     width: 70%;
     height: 48rem;
@@ -12,6 +10,7 @@
     margin-left: 70%;
     height: 48rem;
 }
+
 .title {
     display: flex;
     font-weight: bold;
@@ -28,6 +27,10 @@
     justify-content: flex-start;
     margin: 3rem  0  3rem  2rem;
     
+}
+
+.floatContainer {
+    position: relative;
 }
 
 

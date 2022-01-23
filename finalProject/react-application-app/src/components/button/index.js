@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const Button = (props) => {
 
-  if (props.style === "query") {
+  if (props.classDefiner === "query") {
     return (
       <div className={styles.btnWidth}>
       <button className={styles.buttonQuery} type={props.type}>{props.text}</button>

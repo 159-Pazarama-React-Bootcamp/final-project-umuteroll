@@ -1,21 +1,22 @@
-.floatContainer {
-}
 .floatChildLeft {
-    width: 70%;
-    height: 48rem;
+    width: 50%;
+    height: 20rem;
     float: left;
+    margin-top: 5%;
 } 
 
 .floatChildRight {
-    margin-left: 70%;
-    height: 48rem;
+    margin-top: 8%;
+    margin-left: 0%;
+    height: 20rem;
+    padding-right: 10x;
 }
+
 .title {
     display: flex;
     font-weight: bold;
     font-size: 38px;
     line-height: 46px;
-
 }
 
 .subTitle {
@@ -25,7 +26,19 @@
     color: #465685;
     justify-content: flex-start;
     margin: 3rem  0  3rem  2rem;
-    
 }
 
+.componentsDiv {
+    margin-left: auto;
+    padding-left: 200px;
+    height: auto;
+}
 
+.description {
+    height: 6.5rem;
+    font-size: 30px;
+}
+
+.p {
+    font-size: 23px;
+}

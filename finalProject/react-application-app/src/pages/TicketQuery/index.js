@@ -10,12 +10,19 @@ function TicketQuery() {
             <Header/> 
             <h1 className={styles.subTitle}>Başvuru Sorgula</h1>
             <div className={styles.floatChildLeft}>
-                <Input style="query"/>
-                <Button style="query"/>
+                <div className={styles.componentsDiv}>
+                    <Input classDefiner="query"/>
+                    <Button classDefiner ="query" text="Sorgula"/>
+                </div>
             </div>
-            <div className={styles.floatChildRight}>
-                <h1>Some explanation</h1>
-                <p>BLABLA</p>
+            <div>
+                <div className={styles.floatChildRight}>
+                    <h1>Başvuru Sorgulama</h1>
+                    <p className={styles.p}>Başvuru kodunuzu yandaki alana girerek durumunu sorgulayabilirsiniz.</p>
+                </div>
+            </div>
+            <div className={styles.description}>
+                <p>Başvurularınız 24 saat içerisinde yanıtlanacaktır.</p>
             </div>
             <Footer/>
         </div>

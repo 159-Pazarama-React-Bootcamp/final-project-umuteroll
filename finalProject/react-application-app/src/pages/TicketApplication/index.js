@@ -1,4 +1,3 @@
-
 import styles from "./styles.module.css";
 import React, { useState } from "react"
 import ApplicationForm from "../../components/formCreateApplication";
@@ -21,10 +20,9 @@ function CreateApplication() {
             </div>
             <div className={styles.floatChildRight}>
                 <div style={{ width: "5rem" }}>
-                <h1>Düşünceni önemsiyoruz</h1>
-                <Heart isActive={active} onClick={() => setActive(!active)} />
-            </div>
-
+                    <h1>Düşünceni önemsiyoruz</h1>
+                    <Heart isActive={active} onClick={() => setActive(!active)} />
+                </div>
             </div>
             <Footer />
         </div>
