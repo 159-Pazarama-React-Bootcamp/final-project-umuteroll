@@ -1,0 +1,19 @@
+  
+  .input {
+    height: 10px;
+    padding: 0.5rem 1rem;
+    border: 0.2rem solid #a19f9f;
+    border-radius: 0.3rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+  }
+
+  .inputQuery {
+    height: 10px;
+    padding: 0.5rem 1rem;
+    border: 0.2rem solid #a19f9f;
+    border-radius: 0.3rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+  }
+  

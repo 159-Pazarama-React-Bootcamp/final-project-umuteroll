@@ -1,0 +1,29 @@
+
+
+.button {
+    min-width: 20rem;
+    height: 3.5rem;
+    max-width: 30rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.7rem 3rem 0 rgb(100 100 111 / 20%);
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: "Raleway",sans-serif;
+    cursor: pointer;
+    line-height: 2px;
+    transition: .3s;
+    background: burlywood;
+    color: #fff;
+    margin:10px
+}
+
+.buttonQuery {
+    height: 50px;
+    width: 200px;
+    padding: 0.5rem 1rem;
+    border: 0.3rem solid #a19f9f;
+    border-radius: 0.3rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+}
