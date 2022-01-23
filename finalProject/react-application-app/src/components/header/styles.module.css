@@ -3,11 +3,14 @@
     grid-template-columns: [logo-start] 6fr [logo-end navbar-start] 2fr [navbar-end];
     padding: 1rem 4rem;
     background:chocolate;
-    height: 4rem;
+    height: 5rem;
 }
 .logo {
-    float: left;
+  margin-top: 0.3%;
+  float: left;
+  font-size: 25px;
+  color: white;
 }
 .links {
-  margin: 9px
+  margin-top: 3.5%
 }

@@ -19,6 +19,17 @@ const Input = (props) => {
       />
     </div>
     );
+  }else if (props.classDefiner === "adminLogin") {
+    return (
+      <div className={styles.container}>
+      <input
+        type={inputType}
+        placeholder={placeholder}
+        className={styles.adminLogin} 
+        {...args}
+      />
+    </div>
+    );
   }
  
   return (

@@ -3,14 +3,21 @@ import { useFormik } from 'formik';
 import styles from "./styles.module.css";
 import Label from '../../components/label';
 import Button from '../../components/button';
+import { userSchema } from '../../helper/yup.js';
 
 const TicketForm = () => {
     const { handleSubmit, handleChange, values, errors } = useFormik({
         initialValues: {
             firstName: '',
             lastName: '',
-            idNo: '',
+            age: '',
+            idNO: '',
+            email: '',
+            address: '',
+            subject: '',
+            applyReason: ''
         },
+        validationSchema: userSchema,
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
         },
@@ -46,17 +53,17 @@ const TicketForm = () => {
                         type="text"
                         className={styles.formInput}
                         onChange={handleChange}
-                        value={values.email}
+                        value={values.idNO}
                     />
                  
                     <Label label="Adres" />
-                    <textarea className={styles.txtArea}></textarea>
+                    <textarea name="address" className={styles.txtArea}></textarea>
 
                     <Button text="Dosya Ekle" type="submit" />
 
                 </div>
                 <div className={styles.formRight}>
-
+                {errors.age && <span> {errors.age} </span>}
                     <Label label="Yaş" />
                     <input
                         id="age"
@@ -64,8 +71,9 @@ const TicketForm = () => {
                         type="text"
                         className={styles.formInput}
                         onChange={handleChange}
-                        value={values.email}
+                        value={values.age}
                     />
+                    {errors.email && <span> {errors.email} </span>}
                     <Label label="Email" />
                     <input
                         id="email"
@@ -82,13 +90,13 @@ const TicketForm = () => {
                         type="text"
                         className={styles.formInput}
                         onChange={handleChange}
-                        value={values.email}
+                        value={values.subject}
                     />
                     
                      <Label label="Başvuru Nedeni" />
                      <textarea className={styles.txtArea}></textarea>
-                    <Button text="Başvur" type="submit" />
-
+                    <Button name="applyReason" text="Başvur" type="submit" />
+                     
                 </div>
             </main>
 

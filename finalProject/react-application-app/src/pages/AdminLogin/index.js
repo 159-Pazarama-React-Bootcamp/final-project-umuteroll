@@ -9,8 +9,10 @@ function AdminLogin() {
         <div>
             <Header />
             <div className={styles.adminLoginForm}>
-                <Input classDefiner="adminLogin"/>
-                <Button text="Sorgula"/>
+                <h1>Admin Girişi</h1>
+                <Input classDefiner="adminLogin" placeholder="   Kullanıcı Adı"/>
+                <Input classDefiner="adminLogin" placeholder="   Şifre"/>
+                <Button classDefiner="adminLoginButton" text="Giriş Yap"/>
             </div>
             <Footer />
         </div>

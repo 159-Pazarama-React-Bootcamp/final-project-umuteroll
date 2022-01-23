@@ -11,6 +11,12 @@ const Button = (props) => {
       <button className={styles.buttonQuery} type={props.type}>{props.text}</button>
      </div>
     );
+  } else if (props.classDefiner === "adminLoginButton") {
+    return (
+      <div className={styles.btnWidth}>
+      <button className={styles.adminLoginButton} type={props.type}>{props.text}</button>
+     </div>
+    );
   }
   
   return (

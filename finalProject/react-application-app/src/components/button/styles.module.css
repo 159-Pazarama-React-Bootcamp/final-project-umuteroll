@@ -33,3 +33,20 @@
     margin: 50px auto;
     text-align: center;
 }
+
+.adminLoginButton {
+    margin-top: 2%;
+    height: 40px;
+    width: 180px;
+    font-family: inherit;
+    background-color: rgb(240, 114, 29);
+    color: rgba(255, 255, 255, 0.877);
+    font-size: 20px;
+    padding: 5px 50px;
+    border-radius: 0.9rem;
+    margin: 10px 0px;
+    cursor: pointer;
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+}

@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import LinkSpan from "../linkSpan";
 
 const Header = (props) => {
-
     return (
-
         <header className={styles.header}>
             <div className={styles.logo}>
-                <span className={styles.logo}  > LOGO </span>
+                <span className={styles.logo}> LOGO </span>
             </div>
-            <div>
-                <span className={styles.links}> Link 1 </span>
-                <span className={styles.links}> Link 2 </span>
-                <span className={styles.links}> Link 3 </span>
+            <div className={styles.links}>
+                <LinkSpan link="/" displayName="Anasayfa"/>
+                <LinkSpan link="/basvuru-sorgula" displayName="Başvuru Sorgula"/>
+                <LinkSpan link="/admin" displayName="Admin"/>
             </div>
         </header>
-
-
     );
 };
-
-
 
 export default Header;

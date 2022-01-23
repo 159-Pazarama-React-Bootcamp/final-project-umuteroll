@@ -6,7 +6,7 @@ import Footer from "../../components/footer";
 import Heart from "react-heart"
 
 
-function CreateApplication() {
+function TicketApplication() {
     const [active, setActive] = useState(true)
     return (
         <div className={styles.floatContainer}>
@@ -30,4 +30,4 @@ function CreateApplication() {
     )
 }
 
-export default CreateApplication;
+export default TicketApplication;

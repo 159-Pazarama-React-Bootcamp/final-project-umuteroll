@@ -1,20 +1,10 @@
-.subTitle {
-
-}
 
 .card {
     position: relative;
-
 }
-
-.cardHeader {
-
-}
-
 .cardBody {
 margin-top: 7rem;
 }
-
 .cardBodyLeft{
     width:50%;
     height: 20rem;
@@ -23,7 +13,6 @@ margin-top: 7rem;
     margin-right: -11rem;
   
 }
-
 .cardBodyRight{
     margin-left: 0%;
     height: 20rem;

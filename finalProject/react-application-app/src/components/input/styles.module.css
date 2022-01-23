@@ -19,9 +19,9 @@
   }
 
   .adminLogin {
-    margin-top: 5%;
-    height: 50%;
-    width: 100%;
+    margin-top: 2%;
+    height: 60px;
+    width: 600px;
     border: 0.1rem solid #a19f9f;
     border-radius: 0.7rem;
     font-family: inherit;
