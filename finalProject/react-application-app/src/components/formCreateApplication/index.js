@@ -14,8 +14,7 @@ const TicketForm = () => {
             idNO: '',
             email: '',
             address: '',
-            subject: '',
-            applyReason: ''
+            subject: ''
         },
         validationSchema: userSchema,
         onSubmit: values => {
@@ -95,7 +94,7 @@ const TicketForm = () => {
                     
                      <Label label="Başvuru Nedeni" />
                      <textarea className={styles.txtArea}></textarea>
-                    <Button name="applyReason" text="Başvur" type="submit" />
+                    <Button text="Başvur" type="submit" />
                      
                 </div>
             </main>

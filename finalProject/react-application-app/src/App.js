@@ -6,6 +6,7 @@ import TicketAnswer from './pages/TicketAnswer';
 import TicketSuccess from './pages/TicketSuccess';
 import AdminLogin from './pages/AdminLogin';
 import AdminTicketList from './pages/AdminTicketList';
+import AdminTicketAnswer from './pages/AdminTicketAnswer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/basvuru-basarili" element={<TicketSuccess/>} />
         <Route path="/admin" element={<AdminLogin/>} />
         <Route path="/admin/basvuru-listesi" element={<AdminTicketList/>} />
+        <Route path="/admin/basvuru-cevap" element={<AdminTicketAnswer/>} />
       </Routes>
     </Router>
   </div>

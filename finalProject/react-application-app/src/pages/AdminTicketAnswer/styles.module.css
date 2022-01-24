@@ -1,0 +1,17 @@
+.floatContainer {
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.left {
+    justify-content: right;
+    width: 50%;
+}
+
+.right {
+    justify-content: left;
+    width: 50%;
+}
