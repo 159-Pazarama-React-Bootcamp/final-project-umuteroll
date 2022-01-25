@@ -2,9 +2,21 @@ import styles from "./styles.module.css";
 import Header from "../../components/header";
 import Footer from  "../../components/footer";
 import Row    from "../../components/row";
+import { connect } from "react-redux";
+import { getTicketAnswer } from "../../redux/actions";
+import {React,useEffect} from "react";
 
 
-function TicketAnswer() {
+
+
+const  TicketAnswer = (props) => {
+  
+  
+    useEffect(() => {
+        props.getTicketAnswer()  
+        },[])
+console.log(props)
+
     return (
         <div className={styles.floatContainer}>
             <Header/> 
@@ -34,5 +46,10 @@ function TicketAnswer() {
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return {
+        application: state.application
+    }
+}
 
-export default TicketAnswer;
+export default connect(mapStateToProps,{getTicketAnswer})(TicketAnswer);

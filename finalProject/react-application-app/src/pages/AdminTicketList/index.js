@@ -20,7 +20,7 @@ function AdminTicketList() {
                 </div>
                 <div className={styles.listBody}>
                     {this.props.user.map(tickets => (
-                   <MultiSpan ticketLabel1={tickets.user} ticketLabel2="Başvuru Tarihi" ticketLabel3="Başvuru Durumu" ticketLabel4="Başvuru Detayları" /> ))
+                   <MultiSpan ticketLabel2="Başvuru Tarihi" ticketLabel2="Başvuru Tarihi" ticketLabel3="Başvuru Durumu" ticketLabel4="Başvuru Detayları" /> ))
                     }
                 </div>
             </div>

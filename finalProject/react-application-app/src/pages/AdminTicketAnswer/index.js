@@ -1,10 +1,9 @@
 import styles from "./styles.module.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import Input from "../../components/input";
 import Button from "../../components/button";
 import Row from "../../components/row"
-
+import RadioButtons from "../../components/radioButtons"
 function AdminLogin() {
     return (
         <div>
@@ -30,11 +29,12 @@ function AdminLogin() {
                 </div>
 
                 <div>
-                    radio buttonlar
+                    <RadioButtons />
                 </div>
 
-                <div>
-                    güncelleme mesajı textbox
+                <div className={styles.applyReason}>
+                    <h1>Başvuru Nedeni</h1>
+                    <textarea name="applyReason" className={styles.txtArea}></textarea>
                 </div>
 
                 <div>

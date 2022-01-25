@@ -15,3 +15,14 @@
     justify-content: left;
     width: 50%;
 }
+
+.txtArea{
+    height: 150px;
+    width: 300px;
+}
+
+.applyReason {
+    text-align: center;
+    font-size: small;
+    font-weight: lighter;
+}
