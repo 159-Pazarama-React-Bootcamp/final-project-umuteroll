@@ -11,15 +11,34 @@ import { useEffect,useState } from "react";
 const  AdminLogin = (props) => {
     const {basvuruNo}= useParams();
     const [selected, setSelected] = useState({});
-    useEffect(() => {
-         setSelected(getDetailInfos());
-    },[])
+    
+    setSelected({
+        name: "qwe",
+        surname: "qwe",
+        email: "e",
+        phone: "w",
+        subject: "w",
+        message: "w",
+        status: "we",
+        applicationCode: "",
+        createdAt: "",
+        updatedAt: "",
+        id: "1",
+        identityNumber: 2,
+        file:"1",
+        applicationReason:"dasfa"
+
+
+    });
+
+    
     const  getDetailInfos= function(){
         var arrUsers = props.users.filter(user => user.applicationCode == basvuruNo);
-        return arrUsers[0];
+        return arrUsers;
     }
 
     return (
+        /*
         <div>
             <Header />
             <div>
@@ -59,6 +78,8 @@ const  AdminLogin = (props) => {
             </div>
             <Footer />
         </div>
+        */
+       console.log("cenk adamdir")
     )
 }
 const mapStateToProps = (state) => {

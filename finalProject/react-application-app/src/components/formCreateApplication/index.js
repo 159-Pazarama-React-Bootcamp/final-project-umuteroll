@@ -7,6 +7,7 @@ import { userSchema } from '../../helper/yup.js';
 import { connect } from "react-redux";
 import { postTicketUsers,getLastApplicationCode,postLastApplicationCode } from "../../redux/actions";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const TicketForm = (props) => {
     const navigate = useNavigate();
@@ -23,8 +24,8 @@ const TicketForm = (props) => {
             createdAt: new Date().toLocaleDateString(),
         },
         validationSchema: userSchema,
-        onSubmit: values => {
-            var applicationCode = applicationCodeGenerator();
+        onSubmit: async values => {
+            var applicationCode = await applicationCodeGenerator();
             values={...values,applicationCode:applicationCode}
             props.postTicketUsers(values);
             navigate("/basvuru-basarili");
@@ -32,15 +33,24 @@ const TicketForm = (props) => {
         },
 
     });
-    
-    const applicationCodeGenerator = () => {
-     
+    const getAdminLoginInfos = async () =>  {
+        const data = await axios.get('https://61e710d9ce3a2d00173595e7.mockapi.io/lastApplicationCode')
+        .then(response => response.data )   
+        .catch(error => error.message);
+        return data[0].applicationCode;
+        
+    }
 
+
+    const applicationCodeGenerator = async () => {
+         
+        var lastApplicationCode  = await getAdminLoginInfos();
+        console.log("dedene",lastApplicationCode);
         props.getLastApplicationCode();
-        var applicationCode =`${parseInt(props.lastApplicationCode.applicationCode) + Math.floor(Math.random() * 1001)}`;
-        var obj = {applicationCode:applicationCode}
+        var newApplicationCode =`${parseInt(lastApplicationCode) + Math.floor(Math.random() * 1001)}`;
+        var obj = {applicationCode:newApplicationCode}
         props.postLastApplicationCode(obj);
-        return applicationCode;
+        return newApplicationCode;
 
     }
     return (
