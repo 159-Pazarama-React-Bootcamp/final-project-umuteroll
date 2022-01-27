@@ -19,7 +19,7 @@ function App() {
         <Route path="/basvuru-basarili" element={<TicketSuccess/>} />
         <Route path="/admin" element={<AdminLogin/>} />
         <Route path="/admin/basvuru-listesi" element={<AdminTicketList/>} />
-        <Route path="/admin/basvuru/:basvuruNo" element={<AdminTicketAnswer/>} />
+        <Route path="/admin/basvuru/:id" element={<AdminTicketAnswer/>} />
       </Routes>
     </Router>
   </div>

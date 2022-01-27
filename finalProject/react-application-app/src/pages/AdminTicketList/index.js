@@ -17,7 +17,7 @@ useEffect(() => {
 props.getTicketUsers();
 },[])  
 function navToDetailPage(id){
-    navigate(generatePath(`/admin/basvuru/${id}`), {basvuruNo: id});
+    navigate("/admin/basvuru/" + id);
 
 }
     return (

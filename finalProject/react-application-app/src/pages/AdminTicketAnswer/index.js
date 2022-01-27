@@ -5,40 +5,39 @@ import Button from "../../components/button";
 import Row from "../../components/row"
 import RadioButtons from "../../components/radioButtons"
 import { useParams } from "react-router-dom";
-import { connect } from "formik";
+import { connect } from "react-redux";
 import { useEffect,useState } from "react";
+import axios from 'axios';
 
 const  AdminLogin = (props) => {
-    const {basvuruNo}= useParams();
+    const {id}= useParams();
     const [selected, setSelected] = useState({});
+    const getUsersFromApi =  (id) =>  {
+        const data = axios.get('https://61e710d9ce3a2d00173595e7.mockapi.io/user?search='+id)
+        .then((response) => response.data)   
+        .catch(error => error.message);
+        return data[0];
+    }
+
+    useEffect(() => {
+       getDetailInfos(id);
+    },[])
     
-    setSelected({
-        name: "qwe",
-        surname: "qwe",
-        email: "e",
-        phone: "w",
-        subject: "w",
-        message: "w",
-        status: "we",
-        applicationCode: "",
-        createdAt: "",
-        updatedAt: "",
-        id: "1",
-        identityNumber: 2,
-        file:"1",
-        applicationReason:"dasfa"
-
-
-    });
+   
 
     
-    const  getDetailInfos= function(){
-        var arrUsers = props.users.filter(user => user.applicationCode == basvuruNo);
-        return arrUsers;
+    const  getDetailInfos = function(id){
+        if(props.user){
+        var arrUsers = props.users.filter(user => user.applicationCode == id);
+        setSelected(arrUsers[0]);
+        }
+        else{
+        setSelected(getUsersFromApi(id));
+        }
     }
 
     return (
-        /*
+        
         <div>
             <Header />
             <div>
@@ -48,9 +47,9 @@ const  AdminLogin = (props) => {
 
                 <div className={styles.wrapper}>
                     <div className={styles.left}>
-                        <Row label="Ad: "  detail={selected.name}/>
-                        <Row label="Soyad :"  detail={selected.surname}/>
-                        <Row label="TC :"  detail={selected.identityNumber}/>
+                        <Row label="Ad: "  detail={selected.firstName}/>
+                        <Row label="Soyad :"  detail={selected.lastName}/>
+                        <Row label="TC :"  detail={selected.idNO}/>
                         <Row label="Başvuru Kodu :"  detail={selected.applicationCode}/>
 
                     </div>
@@ -58,7 +57,7 @@ const  AdminLogin = (props) => {
                     <Row label="Başvuru Tarihi :"  detail={selected.createdAt}/>
                     <Row label="Başvuru Konusu :"  detail={selected.subject}/>
                     <Row label="Başvuru Nedeni :"  detail={selected.applicationReason}/>
-                    <Row label="Dosya :"  detail={selected.file}/>
+                    <Row label="Dosya :"           detail={selected.file}/>
                     </div>
                 </div>
 
@@ -67,19 +66,18 @@ const  AdminLogin = (props) => {
                 </div>
 
                 <div className={styles.applyReason}>
-                    <h1>Başvuru Nedeni</h1>
-                    <textarea name="applyReason" className={styles.txtArea}></textarea>
+                    <h1>Başvuru Cevabı</h1>
+                    <textarea name="applicationAnswer" className={styles.txtArea}></textarea>
                 </div>
 
                 <div>
-                    <Button/>
+                    <Button text="Gönder"/>
                 </div>
 
             </div>
             <Footer />
         </div>
-        */
-       console.log("cenk adamdir")
+        
     )
 }
 const mapStateToProps = (state) => {

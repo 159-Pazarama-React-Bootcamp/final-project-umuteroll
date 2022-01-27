@@ -26,7 +26,7 @@ function AdminLogin() {
 
     });
     const handleClick = async () => {
-      let infos = await getAdminLoginInfos(values.userName, values.password);
+      let infos = await getAdminLoginInfos(values.userName);
       if(infos[0].password == values.password){
         navigate("/admin/basvuru-listesi")
       }

@@ -8,7 +8,7 @@ let userSchema = object({
   email: string().email("Geçerli bir email giriniz").required("Email giriniz"),
   address: string().required("Adres giriniz"),
   subject: string().required("Başvuru konusu giriniz"),
-  applyReason: string().required("Başvuru nedeni giriniz"),
+  applicationReason: string().required("Başvuru nedeni giriniz"),
 });
 
 let loginSchema = object({

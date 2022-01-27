@@ -6,7 +6,7 @@ import Button from '../../components/button';
 import { userSchema } from '../../helper/yup.js';
 import { connect } from "react-redux";
 import { postTicketUsers,getLastApplicationCode,postLastApplicationCode } from "../../redux/actions";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const TicketForm = (props) => {
@@ -20,7 +20,7 @@ const TicketForm = (props) => {
             email: '',
             address: '',
             subject: '',
-            applyReason: '',
+            applicationReason: '',
             createdAt: new Date().toLocaleDateString(),
         },
         validationSchema: userSchema,
@@ -125,9 +125,9 @@ const TicketForm = (props) => {
                         value={values.subject}
                     />
                     
-                     <Label label="Başvuru Nedeni"  error={errors.applyReason}/>
-                     <textarea  name="applyReason" className={styles.txtArea} onChange={handleChange}
-                        value={values.applyReason}></textarea>
+                     <Label label="Başvuru Nedeni"  error={errors.applicationReason}/>
+                     <textarea  name="applicationReason" className={styles.txtArea} onChange={handleChange}
+                        value={values.applicationReason}></textarea>
                     <Button text="Başvur" type="submit" onSubmit={handleSubmit} />
                      
                 </div>
