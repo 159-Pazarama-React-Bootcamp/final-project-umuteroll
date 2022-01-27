@@ -83,7 +83,7 @@ const AdminLogin = (props) => {
                 }
 
                 <div>
-                    <RadioButtons name="applicationReason" onClick={handleChange} />
+                    <RadioButtons name="applicationStatus" onClick={handleChange} />
                 </div>
 
                 <div className={styles.applyReason}>
