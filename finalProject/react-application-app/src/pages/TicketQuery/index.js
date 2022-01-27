@@ -11,10 +11,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 const TicketQuery = (props) => {
     const navigate = useNavigate();
+    const [id, setId] = useState({ id:""});
+    const handleChange = (event) => {
+        setId({ id : event.target.value });
+    };
     const onClickQuery = () => {
-        props.getTicketApplication("applicationCode 1") //TODO: inputtan veriyi al
+        props.getTicketApplication(id.id) //TODO: inputtan veriyi al
         if(props.application.length > 0){
-            navigate("/basvuruCevap")
+            navigate("/basvuru/" + id.id);
+        }else{
+            alert("ilgili basvuru bulunamadi");
         }
     };
 
@@ -24,7 +30,7 @@ const TicketQuery = (props) => {
             <h1 className={styles.subTitle}>Başvuru Sorgula</h1>
             <div className={styles.floatChildLeft}>
                 <div className={styles.componentsDiv}>
-                    <Input classdefiner="query" />
+                    <Input classdefiner="query"  onChange={handleChange} />
                     <Button classdefiner="query" text="Sorgula" onClick={onClickQuery}/>
                 </div>
             </div>

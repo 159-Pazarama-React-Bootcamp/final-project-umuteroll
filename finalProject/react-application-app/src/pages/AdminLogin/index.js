@@ -21,13 +21,14 @@ function AdminLogin() {
         },
         validationSchema: loginSchema,
         onSubmit: values => {
-            handleClick();
+            handleClick(values);
         },
 
     });
-    const handleClick = async () => {
+    const handleClick = async (values) => {
       let infos = await getAdminLoginInfos(values.userName);
       if(infos[0].password == values.password){
+        window.localStorage.setItem('isAdmin', true);  
         navigate("/admin/basvuru-listesi")
       }
     }

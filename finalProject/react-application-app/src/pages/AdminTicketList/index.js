@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import MultiSpan from "../../components/multiSpan";
 import { getTicketUsers } from "../../redux/actions";
 import {useEffect} from "react";
-import { generatePath, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -14,6 +14,10 @@ const  AdminTicketList = (props) => {
 const navigate = useNavigate();
 
 useEffect(() => {
+ var isAdmin =  window.localStorage.getItem('isAdmin');
+if(!isAdmin){
+    navigate("/admin");
+    }
 props.getTicketUsers();
 },[])  
 function navToDetailPage(id){

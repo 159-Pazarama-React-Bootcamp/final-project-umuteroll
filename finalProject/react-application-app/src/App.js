@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TicketApplication/>} />
         <Route path="/basvuru-sorgula" element={<TicketQuery/>} />
-        <Route path="/basvuruCevap" element={<TicketAnswer/>} />
+        <Route path="/basvuru/:id" element={<TicketAnswer/>} />
         <Route path="/basvuru-basarili" element={<TicketSuccess/>} />
         <Route path="/admin" element={<AdminLogin/>} />
         <Route path="/admin/basvuru-listesi" element={<AdminTicketList/>} />

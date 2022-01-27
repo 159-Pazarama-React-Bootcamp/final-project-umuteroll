@@ -22,7 +22,7 @@ const Button = (props) => {
   return (
    <>
   <div className={styles.btnWidth}>
-  <button className={styles.button} type={props.type}>{props.text}</button>
+  <button className={styles.button} onClick={props.onClick} type={props.type}>{props.text}</button>
  </div>
    </>
   );
