@@ -5,13 +5,13 @@ import styles from "./styles.module.css";
 
 const Button = (props) => {
 
-  if (props.classDefiner === "query") {
+  if (props.classdefiner === "query") {
     return (
       <div className={styles.btnWidth}>
-      <button className={styles.buttonQuery} type={props.type}>{props.text}</button>
+      <button className={styles.buttonQuery} onClick={props.onClick} type={props.type}>{props.text}</button>
      </div>
     );
-  } else if (props.classDefiner === "adminLoginButton") {
+  } else if (props.classdefiner === "adminLoginButton") {
     return (
       <div className={styles.btnWidth}>
       <button className={styles.adminLoginButton} type={props.type}>{props.text}</button>

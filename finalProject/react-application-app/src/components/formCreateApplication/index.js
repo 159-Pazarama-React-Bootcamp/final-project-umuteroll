@@ -4,8 +4,12 @@ import styles from "./styles.module.css";
 import Label from '../../components/label';
 import Button from '../../components/button';
 import { userSchema } from '../../helper/yup.js';
+import { connect } from "react-redux";
+import { postTicketUsers,getLastApplicationCode,postLastApplicationCode } from "../../redux/actions";
+import { Link, useNavigate } from "react-router-dom";
 
-const TicketForm = () => {
+const TicketForm = (props) => {
+    const navigate = useNavigate();
     const { handleSubmit, handleChange, values, errors } = useFormik({
         initialValues: {
             firstName: '',
@@ -16,14 +20,29 @@ const TicketForm = () => {
             address: '',
             subject: '',
             applyReason: '',
+            createdAt: new Date().toLocaleDateString(),
         },
         validationSchema: userSchema,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-            console.log("selam")
+            var applicationCode = applicationCodeGenerator();
+            values={...values,applicationCode:applicationCode}
+            props.postTicketUsers(values);
+            navigate("/basvuru-basarili");
+
         },
 
     });
+    
+    const applicationCodeGenerator = () => {
+     
+
+        props.getLastApplicationCode();
+        var applicationCode =`${parseInt(props.lastApplicationCode.applicationCode) + Math.floor(Math.random() * 1001)}`;
+        var obj = {applicationCode:applicationCode}
+        props.postLastApplicationCode(obj);
+        return applicationCode;
+
+    }
     return (
     
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -109,4 +128,12 @@ const TicketForm = () => {
     
     );
 };
-export default TicketForm;
+const mapStateToProps = (state) => {
+    return {
+        users: state.users,
+        message: state.message,
+        lastApplicationCode: state.lastApplicationCode
+    }
+}
+
+export default connect(mapStateToProps,{postTicketUsers,getLastApplicationCode,postLastApplicationCode})(TicketForm);

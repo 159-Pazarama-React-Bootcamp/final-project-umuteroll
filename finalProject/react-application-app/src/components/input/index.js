@@ -8,7 +8,7 @@ const Input = (props) => {
   const [inputType, setInputType] = useState(type);
 
   //TODO :class değişecek 
-  if (props.classDefiner === "query") {
+  if (props.classdefiner === "query") {
     return (
       <div className={styles.container}>
       <input
@@ -19,7 +19,7 @@ const Input = (props) => {
       />
     </div>
     );
-  }else if (props.classDefiner === "adminLogin") {
+  }else if (props.classdefiner === "adminLogin") {
     return (
       <div className={styles.container}>
       <input

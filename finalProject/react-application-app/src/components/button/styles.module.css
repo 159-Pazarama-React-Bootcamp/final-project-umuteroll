@@ -13,7 +13,7 @@
     cursor: pointer;
     line-height: 2px;
     transition: .3s;
-    background: burlywood;
+    background: #A6B1E1;
     color: #fff;
     margin:10px
 }
@@ -22,7 +22,7 @@
     height: 40px;
     width: 180px;
     font-family: inherit;
-    background-color: rgb(240, 114, 29);
+    background-color: #A6B1E1;
     color: rgba(255, 255, 255, 0.877);
     font-size: 20px;
     padding: 5px 50px;
@@ -36,10 +36,11 @@
 
 .adminLoginButton {
     margin-top: 2%;
+    margin-right:-1rem;
     height: 40px;
-    width: 180px;
+    width: 250px;
     font-family: inherit;
-    background-color: rgb(240, 114, 29);
+    background-color: #A6B1E1;
     color: rgba(255, 255, 255, 0.877);
     font-size: 20px;
     padding: 5px 50px;

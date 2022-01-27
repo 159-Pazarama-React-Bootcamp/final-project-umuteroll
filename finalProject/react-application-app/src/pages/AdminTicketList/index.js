@@ -3,11 +3,22 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { connect } from "react-redux";
 import MultiSpan from "../../components/multiSpan";
+import { getTicketUsers } from "../../redux/actions";
+import {useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
-function AdminTicketList() {
-//TODO: MultiSpana onClick ekle 
+
+const  AdminTicketList = (props) => {
+const navigate = useNavigate();
+
+useEffect(() => {
+props.getTicketUsers();
+},[])  
+function navToDetailPage(){
+    navigate(`/admin/basvuru/${props.users.applicationCode}`);
+}
     return (
         <div>
             <Header />
@@ -15,13 +26,13 @@ function AdminTicketList() {
                 <div className={styles.listHeader}>
                     <span className={styles.ticketSpan}>Başvuru Kodu</span>
                     <span className={styles.ticketSpan}>Başvuru Tarihi</span>
-                    <span className={styles.ticketSpan}>Başvuru Durumu</span>
-                    <span className={styles.ticketSpan}>Başvuru Detayları</span>
+                    <span className={styles.ticketSpan}>Başvuru Konusu</span>
+                    <span className={styles.ticketSpan}>Email</span>
                 </div>
                 <div className={styles.listBody}>
-                    {this.props.user.map(tickets => (
-                   <MultiSpan ticketLabel2="Başvuru Tarihi" ticketLabel2="Başvuru Tarihi" ticketLabel3="Başvuru Durumu" ticketLabel4="Başvuru Detayları" /> ))
-                    }
+                    {props.users.map(ticket => (
+                   <MultiSpan onClick={navToDetailPage} ticketLabel1={ticket.applicationCode} 
+                   ticketLabel2 = {ticket.createdAt}  ticketLabel3={ticket.subject}  ticketLabel4={ticket.email}  /> )) }
                 </div>
             </div>
             <Footer />
@@ -30,8 +41,8 @@ function AdminTicketList() {
 }
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        users: state.users
     }
 }
 
-export default connect(mapStateToProps)(AdminTicketList);
+export default connect(mapStateToProps,{getTicketUsers})(AdminTicketList);
