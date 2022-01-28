@@ -36,10 +36,6 @@ const TicketAnswer = (props) => {
     }
 
     useEffect(() => {
-        var isAdmin =  window.localStorage.getItem('isAdmin');
-        if(!isAdmin){
-            navigate("/admin");
-            }
         getDetailInfos(id);
     }, [])
 
