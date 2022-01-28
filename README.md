@@ -1,5 +1,6 @@
 ## Bitirme projesi
-### Başvuru / ticket yönetim sistemi
+### Başvuru / ticket yönetim sistemi 
+[Netlify link](https://61f3d98b00dcf2aff105690d--priceless-lichterman-22cc82.netlify.app/)
 
 
 #### Genel Açıklama
