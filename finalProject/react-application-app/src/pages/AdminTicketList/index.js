@@ -4,26 +4,22 @@ import Footer from "../../components/footer";
 import { connect } from "react-redux";
 import MultiSpan from "../../components/multiSpan";
 import { getTicketUsers } from "../../redux/actions";
-import {useEffect} from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 
 
-const  AdminTicketList = (props) => {
-const navigate = useNavigate();
+const AdminTicketList = (props) => {
+    const navigate = useNavigate();
 
-useEffect(() => {
- var isAdmin =  window.localStorage.getItem('isAdmin');
-if(!isAdmin){
-    navigate("/admin");
+    useEffect(() => {
+        props.getTicketUsers();
+    }, [])
+    function navToDetailPage(id) {
+        navigate("/admin/basvuru/" + id);
+
     }
-props.getTicketUsers();
-},[])  
-function navToDetailPage(id){
-    navigate("/admin/basvuru/" + id);
-
-}
     return (
         <div>
             <Header />
@@ -36,8 +32,8 @@ function navToDetailPage(id){
                 </div>
                 <div className={styles.listBody}>
                     {props.users.map(ticket => (
-                   <MultiSpan onClick={()=> {navToDetailPage(ticket.applicationCode)} } ticketLabel1={ticket.applicationCode} 
-                   ticketLabel2 = {ticket.createdAt}  ticketLabel3={ticket.subject}  ticketLabel4={ticket.email}  /> )) }
+                        <MultiSpan key={ticket.id} onClick={() => { navToDetailPage(ticket.applicationCode) }} ticketLabel1={ticket.applicationCode}
+                            ticketLabel2={ticket.createdAt} ticketLabel3={ticket.subject} ticketLabel4={ticket.email} />))}
                 </div>
             </div>
             <Footer />
@@ -50,4 +46,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,{getTicketUsers})(AdminTicketList);
+export default connect(mapStateToProps, { getTicketUsers })(AdminTicketList);

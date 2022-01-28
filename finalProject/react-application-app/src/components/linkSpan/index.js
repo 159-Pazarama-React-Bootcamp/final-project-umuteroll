@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const LinkSpan = (props) => {
     return (   
         <span>
-            <Link className={styles.links} to={props.link}>{props.displayName}</Link>
+            <Link className={styles.links} onClick={props.onClick} to={props.link}>{props.displayName}</Link>
         </span>
     );
 };
